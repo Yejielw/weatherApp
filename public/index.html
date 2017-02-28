@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+	
+	<title>Weather App and Chat</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="page-header">
+        <h1 class="text-center">Weather Search</h1>
+      </div>
+     
+      <h3 class="text-center">Search by City</abbr></h3>
+	<input type="text" name="city" id="CityInput" class="form-control" placeholder="City you wanna check out	">
+	</br>
+	<button type="button" id="myBtn" class="btn btn-primary center-block">Search</button>
+	
+	</br>
+	</div>
+</div>
+  </div>
+ <div class="cityWeather"></div>
+
+
+
+
+  <script type="text/javascript" src="/handlebars/dist/handlebars.min.js"></script>
+  <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script> 
+  <script type="text/javascript" src="script.js"></script>
+ 
+
+<script id="weather-template" type="text/x-handlebars-template">
+  <div class="container col-md-6 col-md-offset-3">
+    	<div class="panel data-id={{id}} panel-info">
+      	  <div class="panel-heading">{{name}}<span class="text-aling-right"><i class="fa fa-times right-block" aria-hidden="true"></i></span>
+          </div>
+
+      	  <div class="panel-body">
+      	    The weather now is: {{weather}}, with an expected max of {{max_temp}} and a min of  {{min_temp}}
+      	  </div>
+
+      	  <div class="Comments" data-comments="{{id}}"></div>
+
+      	  <div class="form-group">
+            <input type="text"
+                  class="comment-input id-{{id}} form-control" 
+                  placeholder="Comment the weather">
+            </input>
+            </br>
+            <button type="button" id="commentBtn" data-id="{{id}}" class="btn btn-info post-comment center-block">Post</button>
+          </div>
+              
+    	</div>
+  </div>
+
+</script>
+
+
+  <script id="comments-template" type="text/x-handlebars-template">
+  	<p data-index="{{index}}">
+	     
+		  {{comment}}
+	</p>
+  </script>
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+
+</body>
+</html>
